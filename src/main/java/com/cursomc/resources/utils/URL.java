@@ -9,20 +9,21 @@ public class URL {
 
 	public static String decodeParam(String s) {
 		try {
-			return  URLDecoder.decode(s, "UTF-8");
+			return URLDecoder.decode(s, "UTF-8");
 		} catch (UnsupportedEncodingException e) {
 			return "";
 		}
 	}
-	
-	public static List<Integer> decodeIntList(String s){
+
+	public static List<Integer> decodeIntList(String s) {
 		String[] vet = s.split(",");
 		List<Integer> list = new ArrayList<>();
-		for(int i = 0; i < vet.length; i++) {
+		for (int i = 0; i < vet.length; i++) {
 			Integer.parseInt(vet[i]);
 		}
 		return list;
-		//return Arrays.asList(s.split(",")).stream().map(x -> Integer.parseInt(x)).collect(Collectors.toList());
+		// return Arrays.asList(s.split(",")).stream().map(x ->
+		// Integer.parseInt(x)).collect(Collectors.toList());
 	}
-	
+
 }
